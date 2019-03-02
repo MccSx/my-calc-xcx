@@ -1,0 +1,5 @@
+<view>Hello</view>
+<view wx:for="{{[1,2,3]}}" wx:key="index">
+    {{item}}
+</view>
+<my-component inner-text="个人组件" bind:myevent="myevent"></my-component>
