@@ -1,3 +1,72 @@
 <view class="calc-page">
-    calc-page
+    <view class="calc-result"></view>
+    <view class="calc-wrapper">
+        <view class="calc-button-wrapper">
+            <view class="calc-button gray">
+                <text class="sym" style="font-size: 30px; color: #000;">C</text>
+            </view>
+            <view class="calc-button gray">
+                <icon class="iconfont icon-xiangzuojiantou" style="font-size: 50px;"></icon>
+            </view>
+            <view class="calc-button gray">
+                <icon class="iconfont icon-3lishi"  style="font-size: 30px;"></icon>
+            </view>
+            <view class="calc-button last">
+                <text class="sym">÷</text>
+            </view>
+        </view>
+        <view class="calc-button-wrapper">
+            <view class="calc-button">
+                <text class="sym">7</text>
+            </view>
+            <view class="calc-button">
+                <text class="sym">8</text>
+            </view>
+            <view class="calc-button">
+                <text class="sym">9</text>
+            </view>
+            <view class="calc-button last">
+                <text class="sym">×</text>
+            </view>
+        </view>
+        <view class="calc-button-wrapper">
+            <view class="calc-button">
+                <text class="sym">4</text>
+            </view>
+            <view class="calc-button">
+                <text class="sym">5</text>
+            </view>
+            <view class="calc-button">
+                <text class="sym">6</text>
+            </view>
+            <view class="calc-button last">
+                <text class="sym">-</text>
+            </view>
+        </view>
+        <view class="calc-button-wrapper">
+            <view class="calc-button">
+                <text class="sym">1</text>
+            </view>
+            <view class="calc-button">
+                <text class="sym">2</text>
+            </view>
+            <view class="calc-button">
+                <text class="sym">3</text>
+            </view>
+            <view class="calc-button last">
+                <text class="sym">+</text>
+            </view>
+        </view>
+        <view class="calc-button-wrapper">
+            <view class="calc-button two-button">
+                <text class="sym">0</text>
+            </view>
+            <view class="calc-button">
+                <text class="sym">.</text>
+            </view>
+            <view class="calc-button last">
+                <text class="sym">=</text>
+            </view>
+        </view>
+    </view>
 </view>
