@@ -6,37 +6,37 @@
     </view>
     <view class="calc-wrapper">
         <view class="calc-button-wrapper">
-            <view class="calc-button gray" style="font-size: 30px; color: #000;" id="clear" bindtap='inputOrder'>C</view>
-            <view class="calc-button gray" id='back' bindtap='inputOrder'>
-                <icon class="iconfont icon-xiangzuojiantou" id='i_back' catchtap='inputOrder' style="font-size: 50px;"></icon>
+            <view class="calc-button gray {{activeMes === 'clear' ? 'active' : ''}}" style="font-size: 30px; color: #000;" id="clear" bindtouchend='inputOrder' bindtouchstart='startOrder'>C</view>
+            <view class="calc-button gray {{(activeMes === 'back' || activeMes === 'i_back') ? 'active' : ''}}" id='back' bindtouchend='inputOrder' bindtouchstart='startOrder'>
+                <icon class="iconfont icon-xiangzuojiantou" id='i_back' catchtouchend='inputOrder' catchtouchstart='startOrder' style="font-size: 50px;"></icon>
             </view>
-            <view class="calc-button gray" id='history' bindtap='inputOrder'>
-                <icon class="iconfont icon-3lishi" id='i_history' catchtap='inputOrder'  style="font-size: 30px;"></icon>
+            <view class="calc-button gray {{(activeMes === 'history' || activeMes === 'i_history') ? 'active' : ''}}" id='history' bindtouchend='inputOrder' bindtouchstart='startOrder'>
+                <icon class="iconfont icon-3lishi" id='i_history' catchtouchend='inputOrder' catchtouchstart='startOrder' style="font-size: 30px;"></icon>
             </view>
-            <view class="calc-button last" id='except' bindtap='inputOrder'>÷</view>
+            <view class="calc-button last {{activeMes === 'except' ? 'active' : ''}}" id='except' bindtouchend='inputOrder' bindtouchstart='startOrder'>÷</view>
         </view>
         <view class="calc-button-wrapper">
-            <view class="calc-button" id="num7" bindtap='inputOrder'>7</view>
-            <view class="calc-button" id="num8" bindtap='inputOrder'>8</view>
-            <view class="calc-button" id="num9" bindtap='inputOrder'>9</view>
-            <view class="calc-button last" id="ride" bindtap='inputOrder'>×</view>
+            <view class="calc-button {{activeMes === 'num7' ? 'active' : ''}}" id="num7" bindtouchend='inputOrder' bindtouchstart='startOrder'>7</view>
+            <view class="calc-button {{activeMes === 'num8' ? 'active' : ''}}" id="num8" bindtouchend='inputOrder' bindtouchstart='startOrder'>8</view>
+            <view class="calc-button {{activeMes === 'num9' ? 'active' : ''}}" id="num9" bindtouchend='inputOrder' bindtouchstart='startOrder'>9</view>
+            <view class="calc-button last {{activeMes === 'ride' ? 'active' : ''}}" id="ride" bindtouchend='inputOrder' bindtouchstart='startOrder'>×</view>
         </view>
         <view class="calc-button-wrapper">
-            <view class="calc-button" id="num4" bindtap='inputOrder'>4</view>
-            <view class="calc-button" id="num5" bindtap='inputOrder'>5</view>
-            <view class="calc-button" id="num6" bindtap='inputOrder'>6</view>
-            <view class="calc-button last" id="reduce" bindtap='inputOrder'>-</view>
+            <view class="calc-button {{activeMes === 'num4' ? 'active' : ''}}" id="num4" bindtouchend='inputOrder' bindtouchstart='startOrder'>4</view>
+            <view class="calc-button {{activeMes === 'num5' ? 'active' : ''}}" id="num5" bindtouchend='inputOrder' bindtouchstart='startOrder'>5</view>
+            <view class="calc-button {{activeMes === 'num6' ? 'active' : ''}}" id="num6" bindtouchend='inputOrder' bindtouchstart='startOrder'>6</view>
+            <view class="calc-button last {{activeMes === 'reduce' ? 'active' : ''}}" id="reduce" bindtouchend='inputOrder' bindtouchstart='startOrder'>-</view>
         </view>
         <view class="calc-button-wrapper">
-            <view class="calc-button" id="num1" bindtap='inputOrder'>1</view>
-            <view class="calc-button" id="num2" bindtap='inputOrder'>2</view>
-            <view class="calc-button" id="num3" bindtap='inputOrder'>3</view>
-            <view class="calc-button last" id="plus" bindtap='inputOrder'>+</view>
+            <view class="calc-button {{activeMes === 'num1' ? 'active' : ''}}" id="num1" bindtouchend='inputOrder' bindtouchstart='startOrder'>1</view>
+            <view class="calc-button {{activeMes === 'num2' ? 'active' : ''}}" id="num2" bindtouchend='inputOrder' bindtouchstart='startOrder'>2</view>
+            <view class="calc-button {{activeMes === 'num3' ? 'active' : ''}}" id="num3" bindtouchend='inputOrder' bindtouchstart='startOrder'>3</view>
+            <view class="calc-button last {{activeMes === 'plus' ? 'active' : ''}}" id="plus" bindtouchend='inputOrder' bindtouchstart='startOrder'>+</view>
         </view>
         <view class="calc-button-wrapper">
-            <view class="calc-button two-button" id="zero" bindtap='inputOrder'>0</view>
-            <view class="calc-button" id="spot" bindtap='inputOrder'>.</view>
-            <view class="calc-button last" id="equal" bindtap='inputOrder'>=</view>
+            <view class="calc-button two-button {{activeMes === 'zero' ? 'active' : ''}}" id="zero" bindtouchend='inputOrder' bindtouchstart='startOrder'>0</view>
+            <view class="calc-button {{activeMes === 'spot' ? 'active' : ''}}" id="spot" bindtouchend='inputOrder' bindtouchstart='startOrder'>.</view>
+            <view class="calc-button last {{activeMes === 'equal' ? 'active' : ''}}" id="equal" bindtouchend='inputOrder' bindtouchstart='startOrder'>=</view>
         </view>
     </view>
 </view>
