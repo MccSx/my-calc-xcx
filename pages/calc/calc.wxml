@@ -34,7 +34,7 @@
             <view class="calc-button last {{activeMes === 'plus' ? 'active' : ''}}" id="plus" bindtouchend='inputOrder' bindtouchstart='startOrder'>+</view>
         </view>
         <view class="calc-button-wrapper">
-            <view class="calc-button two-button {{activeMes === 'zero' ? 'active' : ''}}" id="zero" bindtouchend='inputOrder' bindtouchstart='startOrder'>0</view>
+            <view class="calc-button two-button {{activeMes === 'num0' ? 'active' : ''}}" id="num0" bindtouchend='inputOrder' bindtouchstart='startOrder'>0</view>
             <view class="calc-button {{activeMes === 'spot' ? 'active' : ''}}" id="spot" bindtouchend='inputOrder' bindtouchstart='startOrder'>.</view>
             <view class="calc-button last {{activeMes === 'equal' ? 'active' : ''}}" id="equal" bindtouchend='inputOrder' bindtouchstart='startOrder'>=</view>
         </view>
