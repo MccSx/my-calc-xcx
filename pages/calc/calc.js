@@ -5,7 +5,8 @@ Page({
         activeMes: '',
         tempArr: [],
         tempStr: '',
-        isCleared: false
+        isCleared: false,
+        record: []
     },
     inputOrder(e) {
         this.setData({
@@ -33,19 +34,23 @@ Page({
         } else if (eleID === 'reduce') {
             //点击的按钮是‘-’
             this.recordOperator('-')
-            // this.data.isCleared = false
         } else if (eleID === 'ride') {
             //点击的按钮是‘×’
             this.recordOperator('×')
-            // this.data.isCleared = false
         } else if (eleID === 'except') {
             //点击的按钮是‘÷’
             this.recordOperator('÷')
-            // this.data.isCleared = false
         } else if (eleID === 'equal') {
             //点击的按钮是‘=’
             this.data.tempArr.push( parseFloat(this.data.tempStr) )
             let res = this.calculation(this.data.tempArr)
+
+            if(wx.getStorageSync('record')) {
+                this.data.record = wx.getStorageSync('record')
+            }
+            this.data.record.push(this.data.tempResult)
+            wx.setStorageSync('record', this.data.record)
+
             this.setData({
                 tempStr: '',
                 tempResult: '',
@@ -73,6 +78,10 @@ Page({
                 this.data.tempArr.pop()
                 this.data.isCleared = true
             }
+        } else if (eleID === 'history' || eleID === 'i_history') {
+            wx.navigateTo({
+                url: '../result/result',
+            })
         }
         // console.log(this.data.tempArr)
 

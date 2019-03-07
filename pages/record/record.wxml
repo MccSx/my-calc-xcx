@@ -1,0 +1,3 @@
+<view class="record-page">
+    <view wx:for="{{arr}}" wx:key="index">{{item}}</view>
+</view>

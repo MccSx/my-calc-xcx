@@ -2,6 +2,7 @@
   "pages":[
     "pages/calc/calc",
     "pages/index/index",
+    "pages/record/record",
     "pages/demo/demo",
     "pages/logs/logs"
   ],
