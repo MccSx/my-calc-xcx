@@ -4,7 +4,8 @@ Page({
         tempResult: '',
         activeMes: '',
         tempArr: [],
-        tempStr: ''
+        tempStr: '',
+        isCleared: false
     },
     inputOrder(e) {
         this.setData({
@@ -25,27 +26,53 @@ Page({
             this.setData({
                 result: this.data.tempResult
             })
+            this.data.isCleared = false
         } else if (eleID === 'plus') {
             //点击的按钮是‘+’
             this.recordOperator('+')
         } else if (eleID === 'reduce') {
             //点击的按钮是‘-’
             this.recordOperator('-')
+            // this.data.isCleared = false
         } else if (eleID === 'ride') {
             //点击的按钮是‘×’
             this.recordOperator('×')
+            // this.data.isCleared = false
         } else if (eleID === 'except') {
-            //点击的安妮是‘÷’
+            //点击的按钮是‘÷’
             this.recordOperator('÷')
+            // this.data.isCleared = false
         } else if (eleID === 'equal') {
+            //点击的按钮是‘=’
             this.data.tempArr.push( parseFloat(this.data.tempStr) )
             let res = this.calculation(this.data.tempArr)
             this.setData({
                 tempStr: '',
                 tempResult: '',
                 tempArr: [],
-                result: res[0]+'' 
+                result: res[0]+'',
+                isCleared: false
             })
+        } else if (eleID === 'clear') {
+            //点击的按钮是‘清除’
+            this.setData({
+                tempStr: '',
+                tempResult: '',
+                tempArr: [],
+                result: '0',
+                isCleared: false
+            })
+        } else if (eleID === 'back' || eleID === 'i_back') {
+            this.setData({
+                result: this.data.tempResult.substring(0, this.data.tempResult.length - 1)
+            })
+            this.data.tempResult = this.data.tempResult.substring(0, this.data.tempResult.length - 1)
+            if(this.data.tempStr) {
+                this.data.tempStr = this.data.tempStr.substring(0, this.data.tempStr.length - 1)
+            } else {
+                this.data.tempArr.pop()
+                this.data.isCleared = true
+            }
         }
         // console.log(this.data.tempArr)
 
@@ -56,14 +83,15 @@ Page({
         })
     },
     recordOperator(op) {
-        if (this.data.tempStr) {
-            this.data.tempArr.push( parseFloat(this.data.tempStr) )
+        if (this.data.tempStr || this.data.isCleared) {
+            this.data.isCleared || this.data.tempArr.push( parseFloat(this.data.tempStr) )
             this.data.tempArr.push(op)
             this.data.tempResult += op
             this.setData({
                 tempStr: '',
                 result: this.data.tempResult
             })
+            this.data.isCleared = false
         }
     },
     calculation(arr) {
