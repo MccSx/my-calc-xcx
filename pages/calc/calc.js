@@ -80,7 +80,7 @@ Page({
             }
         } else if (eleID === 'history' || eleID === 'i_history') {
             wx.navigateTo({
-                url: '../result/result',
+                url: '../record/record',
             })
         }
         // console.log(this.data.tempArr)

@@ -1,3 +1,6 @@
 <view class="record-page">
-    <view wx:for="{{arr}}" wx:key="index">{{item}}</view>
+    <view class='record-wrapper'>
+        <view class='record-item' wx:for="{{arr}}" wx:key="index">{{item}}</view>
+    </view>
+    <button bindtap='clearRecord'>清除历史记录</button>
 </view>

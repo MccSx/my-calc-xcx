@@ -1,2 +1,0 @@
-<view class="text">{{innerText}}</view>
-<button bindtap="onTap">点击事件上传</button>

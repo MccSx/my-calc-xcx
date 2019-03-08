@@ -7,5 +7,12 @@ Page({
         this.setData({
             arr: record
         })
+    },
+    clearRecord() {
+        wx.removeStorageSync('record')
+        this.setData({
+            arr: []
+        })
     }
+
 })
